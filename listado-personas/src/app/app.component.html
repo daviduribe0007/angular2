@@ -1,0 +1,16 @@
+<div *ngIf="!isAutenticado()">
+  <a routerLink="/login">Login</a>
+</div>
+
+<div *ngIf="isAutenticado()" >
+  <a style="cursor: pointern" (click)="salir()">Salir</a>
+</div>
+
+<div class="container">
+  <div class="col">
+    <h3>{{titulo}}</h3>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+

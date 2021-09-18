@@ -1,0 +1,23 @@
+<form class="form-group row" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarPersona()">
+  <div class="form-group col-md-2">
+    <!-- <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="nombreInput">  esto es con two  wey binding-->
+    <!-- <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" #nombreRef> para pasar los atributos-->
+    <!-- view chlid para pasar sin usar atributos -->
+
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="nombreInput"
+      required>
+  </div>
+
+  <div class="form-group col-md-2">
+    <!-- <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+      [(ngModel)]="apellidoInput"> -->
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+      [(ngModel)]="apellidoInput" required>
+  </div>
+  <div class="col">
+    <!-- <button type="submit" class="btn btn-primary" (click)="agregarPersona()">Agregar</button> -->
+    <!-- <button type="submit" class="btn btn-primary" (click)="agregarPersona(nombreRef,apellidoRef)">Agregar</button>  pasar atributos-->
+    <button type="submit" class="btn btn-primary" style="cursor:pointer">Agregar</button>
+    <button *ngIf="index != null" type="submit" class="btn btn-danger" style="cursor:pointer" (click)="onEliminarPersona() ">Eliminar</button>
+  </div>
+</form>
